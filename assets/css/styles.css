@@ -19,6 +19,10 @@
     #about{
         background:#f2f4f3 url(../images/about.jpg) no-repeat left top / 50% auto;
     }
+
+    .services-block .features-with-17-right-tp_sur{
+      flex: 1 0 50%;
+    }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
