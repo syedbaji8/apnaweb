@@ -11156,7 +11156,7 @@ h3.global-white {
 
 .w3l-index5 .new-block {
   background-size: cover;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.33)), url(../images/mainslide2.jpg);
+  /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.33)), url(../images/mainslide2.jpg); */
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -11678,7 +11678,7 @@ div#small-dialog iframe {
 
 .w3l-index2 h3.title-spe {
   color: var(--primary-color);
-  font-size: 50px;
+  font-size: 30px;
   font-weight: 600; }
 
 .w3l-index2 .grids-speci1 p {
