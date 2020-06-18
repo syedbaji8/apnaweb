@@ -17,7 +17,7 @@
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
     #about{
-        background:#f2f4f3 url(assets/images/about.jpg) no-repeat left top / 50% auto;
+        background:#f2f4f3 url(../images/about.jpg) no-repeat left top / 50% auto;
     }
 }
 
