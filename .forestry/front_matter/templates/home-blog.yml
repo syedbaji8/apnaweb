@@ -8,5 +8,3 @@ fields:
     required: false
   label: normal-text
   description: Hello world
-pages:
-- content/index22.html.md
