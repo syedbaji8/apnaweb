@@ -1,4 +1,10 @@
 ---
 label: home-blog
 hide_body: false
-fields: []
+fields:
+- name: normal-text
+  type: text
+  config:
+    required: false
+  label: normal-text
+  description: Hello world
