@@ -530,11 +530,11 @@
       <h3 class="global-title">Drop me a Message</h3>
       <div class="row">
         <div class="col-md-8 contact-form">
-          <form action="https://demo.langoorqa.net/testemailer/sendmail.php" method="post">
-            <input type="text" class="form-control" name="w3lName" placeholder="Name" /><br />
-            <input type="email" class="form-control" name="w3lSender" placeholder="E-mail" /><br />
-            <input type="text" class="form-control" name="w3lSubject" placeholder="Subject" /><br />
-            <textarea class="form-control" name="w3lMessage" placeholder="Your Message" style="height:150px;"></textarea><br />
+          <form role="form" action="submit.php" method="post">
+            <input type="text" class="form-control" name="w3lName" placeholder="Name" required /><br />
+            <input type="email" class="form-control" name="w3lSender" placeholder="E-mail" required /><br />
+            <input type="text" class="form-control" name="w3lMobile" placeholder="Mobile Number" required /><br />
+            <textarea class="form-control" name="w3lMessage" placeholder="Your Message" required style="height:150px;"></textarea><br />
             <button class="btn btn-primary theme-button" type="submit">Send</button>
           </form>
         </div>
