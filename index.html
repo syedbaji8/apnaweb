@@ -535,7 +535,14 @@
             <input type="email" class="form-control" name="email" placeholder="E-mail" required /><br />
             <input type="text" class="form-control" name="mobile" placeholder="Mobile Number" required /><br />
             <textarea class="form-control" name="message" placeholder="Your Message" style="height:150px;"></textarea><br />
-            <button class="btn btn-primary theme-button contact1-form-btn">Send</button>
+            <div class="col-lg-12 p-0 d-flex flex-row flex-wrap align-items-center justify-content-between">
+              <div class="col-lg-2 p-0">
+                <button class="btn btn-primary theme-button contact1-form-btn">Send</button>
+              </div>
+              <div class="col-lg-10 p-0">
+                <p class="p-0 m-0" id="responseMessage"></p>
+              </div>
+            </div>
           </form>
         </div>
         <div class="col-md-4 mt-md-0 mt-5 w3-contact-address">
@@ -683,7 +690,7 @@
         //optional validation code here
   
         e.preventDefault();
-      
+        $('#responseMessage').text('Trying to send message..');
         $.ajax({
             url: "https://script.google.com/macros/s/AKfycbxNAr5JfFoksT-xezAHr3ql61THQPKfUlIjDm3f_kQ2tqFLtEGE/exec",
             method: "POST",
@@ -693,16 +700,18 @@
                 
                 if(response.result == "success") {
                     $('.contact1-form')[0].reset();
-                    alert('Thank you for contacting us.');
+                    // alert('Thank you for contacting us.');
+                    $('#responseMessage').addClass('success').removeClass('error').text('Your massage has been sent. Thank you for contacting us.');
                     return true;
                 }
                 else {
-                    alert("Something went wrong. Please try again.")
+                  $('#responseMessage').addClass('error').removeClass('success').text('Something went wrong. Please try again.');
+                    // alert("Something went wrong. Please try again.")
                 }
             },
             error: function() {
-                
-                alert("Something went wrong. Please try again.")
+              $('#responseMessage').addClass('error').removeClass('success').text('Something went wrong. Please try again.');
+                // alert("Something went wrong. Please try again.")
             }
         })
     });

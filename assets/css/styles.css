@@ -5,6 +5,12 @@
     background-size: 100% 100%;
 background: linear-gradient(to right, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.33)), url(../images/about-animation-img1.gif) no-repeat center top;
 }
+#responseMessage.error{
+    color: var(--primary-color);
+}
+#responseMessage.success{
+    color: olive;
+}
 /* // Extra small devices (portrait phones, less than 576px)
 // No media query since this is the default in Bootstrap */
 
