@@ -530,7 +530,7 @@
       <h3 class="global-title">Drop me a Message</h3>
       <div class="row">
         <div class="col-md-8 contact-form">
-          <form role="form" action="https://demo.langoorqa.net/testemailer/submit.php" method="post">
+          <form class="contact1-form">
             <input type="text" class="form-control" name="w3lName" placeholder="Name" required /><br />
             <input type="email" class="form-control" name="w3lSender" placeholder="E-mail" required /><br />
             <input type="text" class="form-control" name="w3lMobile" placeholder="Mobile Number" required /><br />
@@ -677,7 +677,35 @@
     });
   </script>
 
-
+  <script>
+    $('.contact1-form').on('submit',function(e){
+        //optional validation code here
+  
+        e.preventDefault();
+      
+        $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbxNAr5JfFoksT-xezAHr3ql61THQPKfUlIjDm3f_kQ2tqFLtEGE/exec",
+            method: "POST",
+            dataType: "json",
+            data: $(".contact1-form").serialize(),
+            success: function(response) {
+                
+                if(response.result == "success") {
+                    $('.contact1-form')[0].reset();
+                    alert('Thank you for contacting us.');
+                    return true;
+                }
+                else {
+                    alert("Something went wrong. Please try again.")
+                }
+            },
+            error: function() {
+                
+                alert("Something went wrong. Please try again.")
+            }
+        })
+    });
+  </script>
 </body>
 
 </html>
