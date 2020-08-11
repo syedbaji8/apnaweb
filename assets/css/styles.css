@@ -11,6 +11,10 @@ background: linear-gradient(to right, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.33)),
 #responseMessage.success{
     color: olive;
 }
+#gallery .masonry .brick a{
+    max-height: 300px;
+    overflow: hidden;
+}
 /* // Extra small devices (portrait phones, less than 576px)
 // No media query since this is the default in Bootstrap */
 
