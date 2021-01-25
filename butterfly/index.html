@@ -735,7 +735,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form class="php-email-form apnaweb-contact-form">
               <div class="form-row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -870,7 +870,37 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script>
+    $('.apnaweb-contact-form').on('submit',function(e){
+        //optional validation code here
+  
+        e.preventDefault();
+        $('#responseMessage').text('Trying to send message..');
+        $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbxNAr5JfFoksT-xezAHr3ql61THQPKfUlIjDm3f_kQ2tqFLtEGE/exec",
+            method: "POST",
+            dataType: "json",
+            data: $(".apnaweb-contact-form").serialize(),
+            success: function(response) {
+                
+                if(response.result == "success") {
+                    $('.apnaweb-contact-form')[0].reset();
+                    // alert('Thank you for contacting us.');
+                    $('#responseMessage').addClass('success').removeClass('error').text('Your massage has been sent. Thank you for contacting us.');
+                    return true;
+                }
+                else {
+                  $('#responseMessage').addClass('error').removeClass('success').text('Something went wrong. Please try again.');
+                    // alert("Something went wrong. Please try again.")
+                }
+            },
+            error: function() {
+              $('#responseMessage').addClass('error').removeClass('success').text('Something went wrong. Please try again.');
+                // alert("Something went wrong. Please try again.")
+            }
+        })
+    });
+  </script>
 </body>
 
 </html>
