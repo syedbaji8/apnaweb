@@ -8,6 +8,9 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+/* html {
+  scroll-behavior: smooth;
+} */
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -648,7 +651,8 @@ section {
 }
 
 .clients .client-logo img {
-  height: 50%;
+  max-width: 150px;
+  /* height: 60%; */
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   transition: 0.3s;
